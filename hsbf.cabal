@@ -1,0 +1,50 @@
+cabal-version:      3.0
+name:               hsbf
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            MIT
+license-file:       LICENSE
+author:             Raclett3
+maintainer:         im@s283.net
+-- copyright:
+build-type:         Simple
+-- extra-doc-files:
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  Parser
+    -- other-modules:
+    -- other-extensions:
+    build-depends:    base ^>=4.17.2.1
+    hs-source-dirs:   src
+    default-language: Haskell2010
+
+executable hsbf
+    import:           warnings
+    main-is:          Main.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends:
+        base ^>=4.17.2.1,
+        hsbf
+
+    hs-source-dirs:   app
+    default-language: Haskell2010
+
+test-suite hsbf-test
+    import:           warnings
+    default-language: Haskell2010
+    -- other-modules:
+    -- other-extensions:
+    type:             exitcode-stdio-1.0
+    hs-source-dirs:   test
+    main-is:          Test.hs
+    build-depends:
+        base ^>=4.17.2.1,
+        HUnit == 1.*,
+        hsbf
